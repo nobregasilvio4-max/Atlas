@@ -1,0 +1,17 @@
+# Configurações de build para o Netlify
+[build]
+  # Comando para construir o site
+  command = "yarn build"
+  # Diretório onde os arquivos do site construído são salvos
+  publish = "dist"
+
+[build.environment]
+  # Especifica a versão do Node.js para garantir consistência
+  NODE_VERSION = "20"
+
+# Regra de redirecionamento para Single Page Applications (SPA)
+# Isso garante que todas as rotas sejam tratadas pelo React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
